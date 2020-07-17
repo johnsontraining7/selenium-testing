@@ -14,6 +14,9 @@ public class DataProviderUsage {
 	@DataProvider
 	public Object[][] loginDataProvider() {
 		
-		return new Object[][] {{"user", "password"}, {"invalid_user", "password"}, {"user", "invalid_password"}};
+		return new Object[][] {
+			{"user", 			"password"}, 
+			{"invalid_user", 	"password"}, 
+			{"user", 			"invalid_password"}};
 	}
 }

@@ -37,7 +37,8 @@ public class VariousSeleniumInteractions {
 
 		driver.navigate().to("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
 
-		handlePopup(popUpXpath);
+		WebElement element = driver.findElement(By.xpath("//a[@title='Close']"));
+		handlePopup(driver.findElement(By.xpath("//a[@title='Close']")));
 		
 		WebElement messageTextBox = driver.findElement(By.xpath("//input[@id='user-message']"));
 
@@ -211,8 +212,11 @@ public class VariousSeleniumInteractions {
 
 		boolean status = true;
 		int noOfTries = 0;
+		System.out.println("Getting into a while loop");
 		while (status) {
+			
 			if(noOfTries++ < 30) {
+				System.out.println("No of tries-" + noOfTries + " is still less than max tries of 30");
 				try {
 					if(element.isDisplayed()) {
 						element.click();
@@ -223,6 +227,7 @@ public class VariousSeleniumInteractions {
 				System.out.println("No pop-up was seen in the UI, hence continuing with the test execution.");
 				status = false;
 			}
+			System.out.println("No of tries is: " + noOfTries);
 		}
 	}
 	
