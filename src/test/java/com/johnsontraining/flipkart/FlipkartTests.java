@@ -1,6 +1,10 @@
-package com.johnsontraining;
+package com.johnsontraining.flipkart;
+
+import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -9,6 +13,7 @@ import org.testng.annotations.Test;
 import com.johnsontraining.flipkart.pages.BasePage;
 import com.johnsontraining.flipkart.pages.HomePage;
 import com.johnsontraining.flipkart.pages.LoginPage;
+import com.johnsontraining.flipkart.pages.ProductListingPage;
 
 public class FlipkartTests {
 	
@@ -16,6 +21,7 @@ public class FlipkartTests {
 	private LoginPage loginpage;
 	private HomePage homepage;
 	private BasePage basePage;
+	private ProductListingPage productListingPage;
 	
 	@BeforeClass
 	public void setUp() {
@@ -24,6 +30,7 @@ public class FlipkartTests {
 		driver = basePage.getDriver();
 		loginpage = new LoginPage(driver);
 		homepage = new HomePage(driver);
+		productListingPage = new ProductListingPage(driver);
 	}
 	
 	@Test
@@ -47,7 +54,7 @@ public class FlipkartTests {
 	}
 	
 	@Test
-	public void searchFromSearchBox() {
+	public void searchFromSearchBox() throws IOException {
 		
 		loginpage.navigateTo("https://www.flipkart.com");
 		
@@ -55,7 +62,12 @@ public class FlipkartTests {
 		
 		homepage.searchFor("iphone");
 		
-		//validate if you're on samsung product listing page
+		List<String> allProducts = productListingPage.getAllProducts();
+		Assert.assertEquals(allProducts.size(), 40);
+		
+		productListingPage.printElements(allProducts);
+		
+		productListingPage.writeToExcel(allProducts);
 	}
 	
 	@Test

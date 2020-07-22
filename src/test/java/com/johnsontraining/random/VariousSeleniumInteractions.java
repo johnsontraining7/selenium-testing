@@ -1,4 +1,4 @@
-package com.johnsontraining;
+package com.johnsontraining.random;
 
 import java.util.ArrayList;
 import java.util.List;

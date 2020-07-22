@@ -36,6 +36,11 @@ public class HomePage extends BasePage{
 	
 	public void searchFor(String searchItem) {
 		
+		enterTextAndEnter(searchTextBox, searchItem);
+	}
+	
+	public void searchForWithCaps(String searchItem) {
+		
 		enterTextUsingActionsInCaps(searchTextBox, searchItem);
 	}
 

@@ -1,4 +1,4 @@
-package com.johnsontraining;
+package com.johnsontraining.random;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;

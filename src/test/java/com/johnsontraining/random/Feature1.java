@@ -1,6 +1,8 @@
-package com.johnsontraining;
+package com.johnsontraining.random;
 
 import org.testng.annotations.Test;
+
+import com.johnsontraining.flipkart.BaseTest;
 
 public class Feature1 extends BaseTest{
 

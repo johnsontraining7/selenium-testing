@@ -1,4 +1,4 @@
-package com.johnsontraining;
+package com.johnsontraining.flipkart;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
