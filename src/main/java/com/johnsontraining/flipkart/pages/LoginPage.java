@@ -26,7 +26,7 @@ public class LoginPage extends BasePage{
 
 	public void closeLoginPage() {
 		
-		loginPageCloseButton.click();
+		clickElement(loginPageCloseButton);
 	}
 	
 	public void login() {
@@ -40,5 +40,4 @@ public class LoginPage extends BasePage{
 		passWordTextField.sendKeys(password);
 		loginSubmitButton.click();
 	}
-
 }

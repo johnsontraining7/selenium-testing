@@ -33,17 +33,15 @@ public class VariousSeleniumInteractions {
 
 		System.out.println("textBoxTest started");
 		// Test-1
-		String expectedText = "Selenium is amazing!!!";
+		String expectedText = "SELENIUm is amazing!!!";
 
 		driver.navigate().to("https://www.seleniumeasy.com/test/basic-first-form-demo.html");
 
-		WebElement element = driver.findElement(By.xpath("//a[@title='Close']"));
-		handlePopup(driver.findElement(By.xpath("//a[@title='Close']")));
+		handlePopup(popUpXpath);
 		
 		WebElement messageTextBox = driver.findElement(By.xpath("//input[@id='user-message']"));
 
 		messageTextBox.sendKeys(expectedText);
-
 		driver.findElement(By.xpath("//button[text()='Show Message']")).click();
 
 		String actualText = driver.findElement(By.xpath("//span[@id='display']")).getText();
