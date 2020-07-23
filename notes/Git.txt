@@ -1,0 +1,30 @@
+What is GIT?
+
+-> it's SCM.
+
+How it's done?
+
+-> Using Git commands
+
+Git Setup:
+
+1. Install Git using installer or binaries.
+
+2. Navigate the root of the project you want to manage.
+
+3. Execute
+	git init -> (Initialized empty Git repository in C://training-workspace2/git-example/.git/)
+	
+4. git status -> to know what files are to be tracked
+
+5. git add <filename> -> to add specific files to be tracked
+
+6. git commit -m "commit-message" -> to commit the above added changes
+
+
+Github Setup:
+
+1. Create the repository in github.com.
+2. Execute
+	git remote add origin https://github.com/johnsontraining7/git-demo.git
+3. git push --set-upstream origin master (next push onwards just use 'git push')

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import org.testng.AssertJUnit;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -47,7 +47,7 @@ public class VariousSeleniumInteractions {
 		String actualText = driver.findElement(By.xpath("//span[@id='display']")).getText();
 
 		System.out.println("Actual : " + actualText + ", Expected : " + expectedText);
-		Assert.assertEquals(actualText, expectedText, "Expected: " + expectedText + ", but found: " + actualText);
+		AssertJUnit.assertEquals(actualText, expectedText, "Expected: " + expectedText + ", but found: " + actualText);
 	}
 
 	@Test(priority = 2)
@@ -66,7 +66,7 @@ public class VariousSeleniumInteractions {
 
 		String actualText2 = driver.findElement(By.xpath("//span[@id='display']")).getText();
 
-		Assert.assertEquals(actualText2, expectedText2, "Expected: " + expectedText2 + ", but found: " + actualText2);
+		AssertJUnit.assertEquals(actualText2, expectedText2, "Expected: " + expectedText2 + ", but found: " + actualText2);
 	}
 	
 	@Test
@@ -81,7 +81,7 @@ public class VariousSeleniumInteractions {
 		selectCheckbox("//input[@id='isAgeSelected']", true);
 		selectCheckbox("//input[@id='isAgeSelected']", true);
 		
-		Assert.assertEquals(driver.findElement(By.xpath("//div[@id='txtAge']")).getText(), "Success - Check box is checked");
+		AssertJUnit.assertEquals(driver.findElement(By.xpath("//div[@id='txtAge']")).getText(), "Success - Check box is checked");
 	}
 	
 	@Test
@@ -125,7 +125,7 @@ public class VariousSeleniumInteractions {
 			optionsSelected.add(currentWebElement.getText());
 		}
 		
-		Assert.assertEquals(optionsSelected, optionsToSelect);
+		AssertJUnit.assertEquals(optionsSelected, optionsToSelect);
 	}
 	
 	@Test
@@ -141,7 +141,7 @@ public class VariousSeleniumInteractions {
 		selectDropdownByValue("//*[@id='country']", valueToSelect);
 		
 		System.out.println(getSelectedValueFromDropdown("//*[@id='country']"));
-		Assert.assertEquals(getSelectedValueFromDropdown("//*[@id='country']"), valueToSelect);
+		AssertJUnit.assertEquals(getSelectedValueFromDropdown("//*[@id='country']"), valueToSelect);
 	}
 	
 	private void selectDropdownByValue(String dropDownXpath, String valueToSelect) {

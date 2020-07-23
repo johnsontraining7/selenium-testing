@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -36,9 +37,12 @@ public class FlipkartTests {
 	@Test
 	public void closeLoginPopup() {
 		
+		Reporter.log("Started the close login popup test", true);
 		loginpage.navigateTo("https://www.flipkart.com");
-		
+		Reporter.log("Navigating to the homepage of the application", true);
 		loginpage.closeLoginPage();
+		Reporter.log("Closed the login popup", true);
+		Reporter.log("Ended the close login popup test", true);
 	}
 	
 	@Test

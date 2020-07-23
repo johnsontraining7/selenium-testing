@@ -1,11 +1,6 @@
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**
-!**/src/test/**
-validation-service/src/main/resources/logs/application.log
-hb-service/src/main/resources/logs/application.log
-
 ### STS ###
 .apt_generated
 .classpath

@@ -1,0 +1,22 @@
+What is Jenkins?
+
+-> it's CI tool
+-> helps you run jobs(projects with certain settings)
+-> automates this job completely
+
+Setup:
+
+1. Download war from - http://mirrors.jenkins.io/war-stable/2.235.2/jenkins.war
+
+2. Start the jenkins war using
+	-> java -jar jenkins.war --httpPort=8081
+	
+3. Navigate to localhost:8081, login using the default admin password from .jenkins/secret/initialAdminPassword
+
+4. Form homepage -> Go to Manage jenkins -> Manage plugins -> Maven Integration, Git, Git client and Github Integration Plugin.
+
+5. Go to Manage jenkins -> Global tool configurations -> setup maven path, java path.
+
+6. Creating a job
+
+7. Configuring the jobs as per our needs.
